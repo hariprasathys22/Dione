@@ -26,6 +26,13 @@ window.addEventListener('scroll', () =>{
     lastScroll = currentScroll;
 })
 
+var toggleMenu = () => {
+    var menu = document.querySelector(".toggle");
+    var navigation = document.querySelector(".navigation");
+    menu.classList.toggle("active");
+    navigation.classList.toggle("active");
+  };
+
 
 
 

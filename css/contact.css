@@ -6,77 +6,132 @@
   font-family: "Poppins", sans-serif;
 }
 body{
-  background: #000;
+  background: #fff;
 }
-/* --------------------Background Anime-------------------------*/
-.background{
-  position: fixed;
+
+.area{
+  background: #fff;  
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
   width: 100%;
-  height: 100%;
+  height:100vh;
+  position: absolute;
+  
+ 
+}
+
+.circles{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
-.background .rotate{
+
+.circles li{
   position: absolute;
-  top: calc(50% - 200px);
-  left: calc(50% - 200px);
-  width: 400px;
-  height: 400px;
-  transform-style: preserve-3d; 
-  animation: rotate 20s linear infinite;
-  zoom:4;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: #ff781d;
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+  
 }
-@keyframes rotate {
+
+.circles li:nth-child(1){
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
   0%{
-    transform: rotateX(0deg) rotateY(0deg);
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
   }
+
   100%{
-    transform: rotateX(360deg) rotateY(360deg);
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
   }
-}
-.background .rotate .sphere{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-}
-.background .rotate .sphere:nth-child(2){
-  transform: rotate(90deg);
-}
-.background .rotate .sphere:nth-child(3){
-  transform: rotate(45deg);
-}
-.background .rotate .sphere:nth-child(4){
-  transform: rotate(-45deg);
-}
-.background .rotate .sphere span{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  background: radial-gradient(#ccc, #fff);
-  border-radius: 50%;
-}
-.background .rotate .sphere span:nth-child(1){
-  transform: rotateY(0deg);
-}
-.background .rotate .sphere span:nth-child(2){
-  transform: rotateY(30deg);
-}
-.background .rotate .sphere span:nth-child(3){
-  transform: rotateY(60deg);
-}
-.background .rotate .sphere span:nth-child(4){
-  transform: rotateY(90deg);
-}
-.background .rotate .sphere span:nth-child(5){
-  transform: rotateY(120deg);
-}
-.background .rotate .sphere span:nth-child(6){
-  transform: rotateY(150deg);
+
 }
 
 section {
@@ -199,10 +254,100 @@ section {
   position: relative;
 }
 .content .textContent h1 {
-  font-size: 5rem;
-  font-weight: 550;
-  line-height: 1;
-  margin-bottom: 3rem !important;
+  color: #000;
+  font-family: tahoma;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  width: 700px;
+  
+}
+.content .textContent h1 span {
+  font-size: 3rem;
+}
+.message {
+  background-color: #ff8b3d;
+  color: #fff;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  position: absolute;
+  padding-left: 0.5rem;
+  top: 0.2rem;
+  left: 290px;
+  animation: openclose 5s ease-in-out infinite;
+}
+.word1, .word2, .word3 {
+  font-family: tahoma;
+}
+
+@keyframes openclose {
+  0% {
+    top: 0.2rem;
+    width: 0;
+  }
+  5% {
+    width: 0;
+  }
+  15% {
+    width: 230px;
+  }
+  30% {
+    top: 0.2rem;
+    width: 230px;
+  }
+  33% {
+    top: 0.2rem;
+    width: 0;
+  }
+  35% {
+    top: 0.2rem;
+    width: 0;
+  }
+  38% {
+    top: -4.5rem;
+    
+  }
+  48% {
+    top: -4.5rem;
+    width: 190px;
+  }
+  62% {
+    top: -4.5rem;
+    width: 190px;
+  }
+  66% {
+    top: -4.5rem;
+    width: 0;
+    text-indent: 0;
+  }
+  71% {
+    top: -9rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  86% {
+    top: -9rem;
+    width: 285px;
+  }
+  95% {
+    top: -9rem;
+    width: 285px;
+  }
+  98% {
+    top: -9rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  100% {
+    top: 0;
+    width: 0;
+    text-indent: 0;
+  }
 }
 .content .textContent .content-left {
   font-size: 1.8rem;
@@ -259,8 +404,73 @@ section {
 }
 
 
+.sci .wrapper .button{
+  display: inline-block;
+ 
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 0 5px;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.sci .wrapper .button:hover{
+  width: 200px;
+}
+.sci .wrapper .button .icon{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.sci .wrapper .button:nth-child(1):hover .icon{
+  background: #4267B2;
+}
+.sci .wrapper .button:nth-child(2):hover .icon{
+  background: #1DA1F2;
+}
+.sci .wrapper .button:nth-child(3):hover .icon{
+  background: #E1306C;
+}
+.sci .wrapper .button:nth-child(4):hover .icon{
+  background: #FF0000;
+}
+.sci .wrapper .button .icon i{
+  font-size: 25px;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.sci .wrapper .button:hover .icon i{
+  color: #fff;
+}
 
-
+.sci .wrapper .button span{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+}
+.sci .wrapper .button:nth-child(1) span{
+  color: #4267B2;
+}
+.sci .wrapper .button:nth-child(2) span{
+  color: #1DA1F2;
+}
+.sci .wrapper .button:nth-child(3) span{
+  color: #E1306C;
+}
+.sci .wrapper .button:nth-child(4) span{
+  color: #FF0000;
+}
 
 
 
@@ -304,7 +514,7 @@ section {
   font-size: 2.16667rem;
   
   font-weight: 500;
-  color: #68a0b0;
+  color: #ff781d;
   /* #5CB3FF */
   line-height: 1.5;
   margin-bottom: 1.5rem;
@@ -313,7 +523,7 @@ section {
 .content .rightC .hiring{
     position: relative;
     margin-top: 3rem;
-    max-width: 30vw;
+    /* max-width: 30vw; */
     
 }
 .content .rightC .hiring li{
@@ -334,33 +544,178 @@ section {
 .content .rightC .hiring li .hire{
     font-size: 2.16667rem;
     font-weight: 500;
-    color: #68a0b0;
+    color: #ff781d;
     /* #5CB3FF */
     line-height: 1.5;
     margin-bottom: 1.5rem;
 }
 
 
-.content .rightC .sci{
+.content .textContent .content-T .sci{
     position: relative;
     margin-top: 3rem;
 }
-.content .rightC .sci li{
+.content .textContent .content-T .sci li{
     list-style: none;
 }
-.content .rightC .sci li p{
+.content .textContent .content-T .sci li p{
     font-size: 2.16667rem;
     font-weight: 500;
-    color: #68a0b0;
+    color: #ff781d;
+    /*#68a0b0*/
     /* #5CB3FF */
     line-height: 1.5;
     margin-bottom: 1.5rem;
     margin-top: 0.2rem !important;
 }
-.content .rightC .sci li a{
+.content .textContent .content-T .sci li a{
     font-size: 1.3rem;
     text-decoration: none;
     color: #000;
     font-weight: 600;
     position: absolute;
+}
+@media screen, (min-width:769) and (max-width: 1024){
+ .area{
+  background: #fff;  
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+  width: 100%;
+  height:120vh;
+  position: absolute;
+ }
+ .circles{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+  overflow: hidden;
+}
+
+
+ 
+} 
+@media screen and (max-width: 450px) {
+  
+  
+  .header{
+    padding: 20px;
+  }
+  .header .logo img{
+    max-width: 60px;
+  }
+  .header ul{
+    display: none;
+  }
+  .toggle{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    left:30%;
+    cursor: pointer;
+    background: url(../images/menu.png);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(1);
+    z-index: 11;
+  }
+  .toggle.active{
+    left: 30%;
+  
+    background: url(../images/close.png);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+  .header ul.navigation.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    z-index: 10;
+  }
+  .header ul li a {
+    font-size: 1.5em;
+    margin: 10%;
+    
+  }
+  .content{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  
+  }
+  .content .textContent {
+  margin-top: 30px;
+  max-width: 32rem;
+  position: relative;
+  
+}
+  .content .textContent h1 span {
+    font-size: 3rem;
+}
+.content .textContent h1 {
+  color: #000;
+  font-family: tahoma;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  width: 480px;
+  
+}
+.content .textContent h1 span {
+  font-size: 2rem;
+}
+.message {
+  background-color: #ff8b3d;
+  color: #fff;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  position: absolute;
+  padding-left: 0.5rem;
+  top: 0.2rem;
+  left: 200px;
+  animation: openclose 5s ease-in-out infinite;
+}
+  .content .textContent .content-left{
+    font-size: 1.3rem;
+    width: 30rem
+  }
+  .content .textContent .content-1{
+    font-size: 1.3rem;
+  } 
+  .content .rightC .workSpace li .workHead{
+    font-size: 2rem;
+  }
+  .content .rightC .hiring li .hire{
+    font-size: 2rem;
+  }
+  .content .rightC .hiring li p{
+    margin-top: 30%;
+
+  }
+  .content .rightC .sci li p{
+    font-size: 2rem;
+  }
+ 
+
+ 
+
+ 
 }
