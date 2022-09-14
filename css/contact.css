@@ -150,7 +150,7 @@ section {
   left: 0;
   top: 0;
   width: 100%;
-  padding: 40px 60px;
+  padding: 20px 60px 40px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -163,7 +163,7 @@ section {
 
 .header .logo img {
   position: relative;
-  max-width: 15vw;
+  max-width: 9vw;
 }
 .header .navbar {
   position: relative;
